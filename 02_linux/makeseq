@@ -22,3 +22,9 @@ do
 	touch $SEQSHOT/${SEQSHOT}_cmp.nk
 done
 
+# remove the seqshot name from all the files
+# find -type f | rename 's/[a-z]{3}[0-9]{3}_//'
+
+# rename each anim file to anm
+#find . -name "*.ma" | rename 's/anim/anm/'
+
