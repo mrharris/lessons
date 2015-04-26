@@ -1,0 +1,24 @@
+#!/bin/bash
+SEQ=$1
+NSHOTS=$2
+
+#chs/
+#chs/chs010
+#chs/chs010/chs010_anm.ma
+#chs/chs010/chs010_lgt.ma
+#chs/chs010/chs010_cmp.nk
+
+# make a dir for the sequence
+mkdir $SEQ
+cd $SEQ
+
+# create a dir for each shot in the seq
+for n in `seq -w 00 $NSHOTS`
+do
+	SEQSHOT=${SEQ}${n}0
+	mkdir -p ${SEQSHOT}/renders
+	touch $SEQSHOT/${SEQSHOT}_anm.ma
+	touch $SEQSHOT/${SEQSHOT}_lgt.ma
+	touch $SEQSHOT/${SEQSHOT}_cmp.nk
+done
+
